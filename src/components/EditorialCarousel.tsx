@@ -166,21 +166,21 @@ export default function EditorialCarousel() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header with Carousel Navigation Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-6 reveal-fade-up">
           <div>
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3 reveal-fade-up reveal-delay-75">
               <span className="w-8 h-[1px] bg-[#9E5338]" />
               <span className="text-[11px] font-sans uppercase tracking-[0.28em] text-[#9E5338] font-semibold">
                 Signature Harvest Carousel • 2.8s Auto-Cycle
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight reveal-fade-up reveal-delay-150">
               The Living <span className="italic font-normal text-[#9E5338]">Archive</span>
             </h2>
           </div>
 
           {/* Controls: Counter, Pause/Play toggle, and Curved Arrows */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 reveal-fade-up reveal-delay-200">
             {/* Slide Index Counter Pill */}
             <span className="font-mono text-xs text-[#5E625A] tracking-widest liquid-glass rounded-full px-3.5 py-1.5 border border-white/60 shadow-sm">
               0{currentIndex + 1} / 0{carouselItems.length}
@@ -216,7 +216,7 @@ export default function EditorialCarousel() {
         </div>
 
         {/* Dynamic Progress Timer Bar (resets every 2.8 seconds) */}
-        <div className="w-full h-[2px] bg-[#1C1E1B]/10 overflow-hidden mb-8 rounded-full">
+        <div className="w-full h-[2px] bg-[#1C1E1B]/10 overflow-hidden mb-8 rounded-full reveal-fade-up reveal-delay-250">
           <div
             key={currentIndex}
             className={`h-full bg-[#9E5338] ${isPaused ? "w-full" : "animate-progress"}`}
@@ -227,7 +227,7 @@ export default function EditorialCarousel() {
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center liquid-glass rounded-3xl border border-white/80 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(16,31,23,0.08)] transition-all duration-500"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center liquid-glass rounded-3xl border border-white/80 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(16,31,23,0.08)] transition-all duration-500 reveal-fade-up reveal-delay-300"
         >
           {/* Left Column: Product Imagery with Smooth Ken Burns / Scale Effect */}
           <div className="lg:col-span-7 relative">
@@ -313,7 +313,7 @@ export default function EditorialCarousel() {
         </div>
 
         {/* Carousel Thumbnail Strip with Curved Frames */}
-        <div className="mt-8 flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+        <div className="mt-8 flex gap-3 overflow-x-auto pb-4 no-scrollbar reveal-fade-up reveal-delay-350">
           {carouselItems.map((item, idx) => (
             <button
               key={item.id}

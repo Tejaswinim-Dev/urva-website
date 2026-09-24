@@ -92,20 +92,20 @@ export default function HoneyExperienceSection() {
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Section Heading */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="max-w-3xl mb-12 sm:mb-16 reveal-fade-up">
+          <div className="flex items-center gap-3 mb-3 reveal-fade-up reveal-delay-75">
             <span className="w-8 h-[1px] bg-[#DF9F52]" />
             <span className="text-[11px] font-sans uppercase tracking-[0.28em] text-[#DF9F52] font-semibold">
               The Wild Honey Archive
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-[#FAF7F2]">
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-[#FAF7F2] reveal-fade-up reveal-delay-150">
             Purely Wild. <br />
             <span className="italic font-normal text-[#E8B86D]">Naturally Golden.</span>
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-[#C9D4C5]/85 font-light leading-relaxed max-w-xl">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-[#C9D4C5]/85 font-light leading-relaxed max-w-xl reveal-fade-up reveal-delay-200">
             Harvested by indigenous forest elders using traditional, bee-friendly smoke-free techniques. Unpasteurized and dense with live enzymes.
           </p>
         </div>
@@ -115,7 +115,15 @@ export default function HoneyExperienceSection() {
           {honeys.map((honey, index) => (
             <div
               key={honey.id}
-              className="liquid-glass-dark rounded-3xl border border-white/15 hover:border-[#DF9F52]/60 transition-all duration-500 p-5 flex flex-col justify-between group shadow-xl hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(223,159,82,0.18)]"
+              className={`liquid-glass-dark rounded-3xl border border-white/15 hover:border-[#DF9F52]/60 transition-all duration-500 p-5 flex flex-col justify-between group shadow-xl hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(223,159,82,0.18)] reveal-fade-up ${
+                index === 0
+                  ? "reveal-delay-150"
+                  : index === 1
+                  ? "reveal-delay-250"
+                  : index === 2
+                  ? "reveal-delay-350"
+                  : "reveal-delay-450"
+              }`}
             >
               <div>
                 {/* 4:3 Image Container with Smooth Zoom & Curved Border */}
@@ -220,7 +228,7 @@ export default function HoneyExperienceSection() {
         </div>
 
         {/* Minimal Purity Pillars in Curved Liquid Glass Container (Mobile-Friendly rounded-2xl sm:rounded-full) */}
-        <div className="mt-14 liquid-glass-dark rounded-2xl sm:rounded-full py-5 px-6 sm:px-10 border border-white/15 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-[#C9D4C5]">
+        <div className="mt-14 liquid-glass-dark rounded-2xl sm:rounded-full py-5 px-6 sm:px-10 border border-white/15 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-[#C9D4C5] reveal-fade-up reveal-delay-500">
           <div className="flex items-center gap-2">
             <Check size={14} className="text-[#DF9F52] flex-shrink-0" />
             <span>Never Heated (&lt;40°C)</span>

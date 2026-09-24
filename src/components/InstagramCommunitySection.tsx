@@ -88,15 +88,15 @@ export default function InstagramCommunitySection() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-fade-up">
           <div>
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3 reveal-fade-up reveal-delay-75">
               <span className="w-8 h-[1px] bg-[#6F8369]" />
               <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#6F8369] font-semibold">
                 Documentary Community Feed
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight reveal-fade-up reveal-delay-150">
               Life at <span className="italic font-normal">Urvaa</span>
             </h2>
           </div>
@@ -105,7 +105,7 @@ export default function InstagramCommunitySection() {
             href="https://instagram.com/urvaa_in"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#101F17] text-[#FAF7F2] hover:bg-[#1E3528] text-xs uppercase font-sans tracking-[0.25em] font-semibold rounded-full transition-all duration-300 self-start md:self-auto cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] group"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#101F17] text-[#FAF7F2] hover:bg-[#1E3528] text-xs uppercase font-sans tracking-[0.25em] font-semibold rounded-full transition-all duration-300 self-start md:self-auto cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] group reveal-fade-up reveal-delay-200"
           >
             <InstagramIcon size={14} className="text-[#DF9F52]" />
             <span>Follow @urvaa_in</span>
@@ -118,11 +118,23 @@ export default function InstagramCommunitySection() {
 
         {/* Visual Instagram Documentary Grid with Curved Frames */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-          {posts.map((post) => (
+          {posts.map((post, idx) => (
             <div
               key={post.id}
               onClick={() => setSelectedPost(post)}
-              className="relative aspect-square overflow-hidden rounded-2xl bg-[#EAE4D7] group cursor-pointer border border-white/60 shadow-sm hover:shadow-md transition-all duration-300"
+              className={`relative aspect-square overflow-hidden rounded-2xl bg-[#EAE4D7] group cursor-pointer border border-white/60 shadow-sm hover:shadow-md transition-all duration-300 reveal-fade-up ${
+                idx === 0
+                  ? "reveal-delay-100"
+                  : idx === 1
+                  ? "reveal-delay-150"
+                  : idx === 2
+                  ? "reveal-delay-200"
+                  : idx === 3
+                  ? "reveal-delay-250"
+                  : idx === 4
+                  ? "reveal-delay-300"
+                  : "reveal-delay-350"
+              }`}
             >
               <Image
                 src={post.image}
@@ -152,7 +164,7 @@ export default function InstagramCommunitySection() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center reveal-fade-up reveal-delay-300">
           <p className="text-xs text-[#5E625A] font-serif italic">
             Join 12,000+ conscious individuals embracing rural traditions, ethical wild honeys, and plastic-free tables.
           </p>

@@ -17,12 +17,16 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import QuickViewModal from "@/components/QuickViewModal";
 import UrvaPreloader from "@/components/UrvaPreloader";
+import ScrollRevealManager from "@/components/ScrollRevealManager";
 
 export default function Home() {
   return (
     <ShopProvider>
       {/* Brand Preloader with Official Logo & Rotating Seal */}
       <UrvaPreloader />
+
+      {/* Global Scroll-Triggered Reveal Animations */}
+      <ScrollRevealManager />
 
       <SmoothScroll>
         <div className="relative min-h-screen bg-[#FAF7F2] text-[#1C1E1B] overflow-x-hidden selection:bg-[#1A3427] selection:text-[#FAF7F2]">

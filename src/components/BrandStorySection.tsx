@@ -260,7 +260,7 @@ export default function BrandStorySection() {
 
           {/* Right Column: Minimal Editorial Copy */}
           <div ref={contentRef} className="lg:col-span-6 flex flex-col justify-center space-y-6">
-            <div>
+            <div className="reveal-fade-up">
               <div className="flex items-center gap-3 mb-2.5">
                 <span className="w-8 h-[1px] bg-[#9E5338]" />
                 <span className="text-[10.5px] font-sans uppercase tracking-[0.28em] text-[#9E5338] font-semibold">
@@ -273,11 +273,11 @@ export default function BrandStorySection() {
               </h2>
             </div>
 
-            <p className="font-serif text-xl sm:text-2xl text-[#101F17] font-light leading-relaxed">
+            <p className="font-serif text-xl sm:text-2xl text-[#101F17] font-light leading-relaxed reveal-fade-up reveal-delay-150">
               “At Urvaa, we bring together traditional rural skills and naturally sourced products to create things that are better for people and the planet.”
             </p>
 
-            <div className="space-y-3.5 text-xs sm:text-sm text-[#5E625A] font-light leading-relaxed">
+            <div className="space-y-3.5 text-xs sm:text-sm text-[#5E625A] font-light leading-relaxed reveal-fade-up reveal-delay-200">
               <p>
                 In a world of synthetic disposables and processed shortcuts, URVA returns to the foundational wisdom of Indian villages. Naturally fallen leaves from Areca palms and wild Siali climbers are shaped by skilled artisan hands into durable tableware that composts back into living garden soil within 90 days.
               </p>
@@ -287,7 +287,7 @@ export default function BrandStorySection() {
             </div>
 
             {/* Three Simple Pillars in Liquid Glass Container */}
-            <div className="grid grid-cols-3 gap-3 p-5 liquid-glass rounded-2xl border border-white/70 shadow-sm">
+            <div className="grid grid-cols-3 gap-3 p-5 liquid-glass rounded-2xl border border-white/70 shadow-sm reveal-fade-up reveal-delay-250">
               <div className="space-y-1">
                 <div className="font-serif text-base sm:text-lg font-medium text-[#101F17]">Ancestral</div>
                 <p className="text-[10.5px] text-[#5E625A] leading-snug">Generations of tribal craft.</p>
@@ -303,7 +303,7 @@ export default function BrandStorySection() {
             </div>
 
             {/* Link CTA in Curved Pill */}
-            <div className="pt-2">
+            <div className="pt-2 reveal-fade-up reveal-delay-300">
               <a
                 href="#tableware"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-xs uppercase font-sans tracking-[0.24em] font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] group cursor-pointer"

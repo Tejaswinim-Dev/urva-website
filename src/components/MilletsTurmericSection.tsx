@@ -45,7 +45,7 @@ export default function MilletsTurmericSection() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Pre-heading */}
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-4 reveal-fade-up">
           <span className="w-8 h-[1px] bg-[#B4783B]" />
           <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#B4783B] font-semibold">
             Ancestral Earth Harvest
@@ -53,11 +53,11 @@ export default function MilletsTurmericSection() {
         </div>
 
         <div className="max-w-3xl mb-16">
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08] reveal-fade-up reveal-delay-150">
             Millets & Turmeric. <br />
             <span className="italic font-normal text-[#995535]">Sun-cured vitality.</span>
           </h2>
-          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed">
+          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed reveal-fade-up reveal-delay-200">
             Long before industrial monoculture, India’s agrarian wisdom relied on resilient ancient millets and healing golden turmeric. Sourced directly from rain-fed tribal farming clusters with zero chemicals.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function MilletsTurmericSection() {
         {/* Editorial Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Main Visual Frame */}
-          <div className="lg:col-span-7 relative">
+          <div className="lg:col-span-7 relative reveal-fade-up reveal-delay-250">
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(180,120,59,0.12)] bg-[#EAE4D7] border border-white/80">
               <Image
                 src="/images/millets-turmeric.jpg"
@@ -90,7 +90,7 @@ export default function MilletsTurmericSection() {
           {/* Product Pair Cards in Liquid Glass */}
           <div className="lg:col-span-5 space-y-6">
             {/* Millets Card */}
-            <div className="p-6 sm:p-7 liquid-glass rounded-3xl border border-white/80 hover:border-[#B4783B]/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div className="p-6 sm:p-7 liquid-glass rounded-3xl border border-white/80 hover:border-[#B4783B]/50 transition-all duration-300 shadow-lg hover:shadow-xl reveal-fade-up reveal-delay-300">
               <div className="flex justify-between items-start">
                 <div>
                   <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#6F8369] font-semibold">
@@ -122,7 +122,7 @@ export default function MilletsTurmericSection() {
             {/* Turmeric Card */}
             <div
               onClick={() => setQuickViewProduct(turmericProduct)}
-              className="p-6 sm:p-7 liquid-glass rounded-3xl border border-white/80 hover:border-[#DF9F52]/50 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+              className="p-6 sm:p-7 liquid-glass rounded-3xl border border-white/80 hover:border-[#DF9F52]/50 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer reveal-fade-up reveal-delay-400"
             >
               <div className="flex justify-between items-start">
                 <div>
@@ -156,7 +156,7 @@ export default function MilletsTurmericSection() {
             </div>
 
             {/* Farm Story Note */}
-            <div className="p-4.5 liquid-glass rounded-2xl border border-[#B4783B]/30 text-xs text-[#5E625A]">
+            <div className="p-4.5 liquid-glass rounded-2xl border border-[#B4783B]/30 text-xs text-[#5E625A] reveal-fade-up reveal-delay-500">
               <span className="font-semibold text-[#101F17]">Seasonal Harvest Notice: </span>
               Each batch is dated with the harvest season and geographic village cluster code printed directly onto the natural packaging label.
             </div>

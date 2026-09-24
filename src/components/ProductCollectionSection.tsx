@@ -144,21 +144,21 @@ export default function ProductCollectionSection() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal-fade-up">
           <div>
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3 reveal-fade-up reveal-delay-75">
               <span className="w-8 h-[1px] bg-[#6F8369]" />
               <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#6F8369] font-semibold">
                 Editorial Product Showcase
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#101F17] tracking-tight reveal-fade-up reveal-delay-150">
               The Living <span className="italic font-normal">Collection</span>
             </h2>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 border-b border-[#1C1E1B]/15 pb-2">
+          <div className="flex flex-wrap gap-2 border-b border-[#1C1E1B]/15 pb-2 reveal-fade-up reveal-delay-200">
             {categories.map((category) => (
               <button
                 key={category}

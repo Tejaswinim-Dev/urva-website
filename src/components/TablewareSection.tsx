@@ -61,7 +61,7 @@ export default function TablewareSection() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Pre-heading */}
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-4 reveal-fade-up">
           <span className="w-8 h-[1px] bg-[#6F8369]" />
           <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#6F8369] font-semibold">
             The Tableware Showcase
@@ -69,17 +69,17 @@ export default function TablewareSection() {
         </div>
 
         <div className="max-w-3xl mb-16">
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08] reveal-fade-up reveal-delay-150">
             Made by hand. <br />
             <span className="italic font-normal text-[#1A3427]">Inspired by nature.</span>
           </h2>
-          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed">
+          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed reveal-fade-up reveal-delay-200">
             A conscious alternative to plastic and bleached paper disposables. Formed from fallen palm fronds and forest siali leaves, offering unparalleled natural elegance and heavy-duty 90 GSM durability for feasts, celebrations, and everyday mindful living.
           </p>
         </div>
 
         {/* Interactive Material Selector Tabs in Liquid Glass Pill Container (Responsive on mobile) */}
-        <div className="flex flex-col sm:inline-flex sm:flex-row w-full sm:w-auto liquid-glass rounded-2xl sm:rounded-full p-1.5 border border-white/60 shadow-md mb-10 sm:mb-12 gap-1 sm:gap-0">
+        <div className="flex flex-col sm:inline-flex sm:flex-row w-full sm:w-auto liquid-glass rounded-2xl sm:rounded-full p-1.5 border border-white/60 shadow-md mb-10 sm:mb-12 gap-1 sm:gap-0 reveal-fade-up reveal-delay-250">
           <button
             onClick={() => setSelectedPlate("areca")}
             className={`w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.2em] font-semibold rounded-xl sm:rounded-full transition-all duration-300 relative cursor-pointer text-center ${
@@ -106,7 +106,7 @@ export default function TablewareSection() {
         {/* Feature Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Rich Macro Photography with Zoom Feature */}
-          <div className="lg:col-span-7 relative">
+          <div className="lg:col-span-7 relative reveal-fade-up reveal-delay-300">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(16,31,23,0.12)] bg-[#EAE4D7] border border-white/80">
               <Image
                 src={currentProduct.image}
@@ -190,7 +190,7 @@ export default function TablewareSection() {
           </div>
 
           {/* Right Column: Liquid Glass Container with Dimensions, Specs & Ordering */}
-          <div className="lg:col-span-5 liquid-glass rounded-3xl p-7 sm:p-9 border border-white/80 shadow-xl space-y-6 flex flex-col justify-between">
+          <div className="lg:col-span-5 liquid-glass rounded-3xl p-7 sm:p-9 border border-white/80 shadow-xl space-y-6 flex flex-col justify-between reveal-fade-up reveal-delay-350">
             <div>
               <span className="text-[10px] font-sans uppercase tracking-[0.28em] text-[#6F8369] font-semibold block">
                 Single-Origin Tableware

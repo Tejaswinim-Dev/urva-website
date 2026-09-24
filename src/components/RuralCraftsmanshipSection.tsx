@@ -105,20 +105,20 @@ export default function RuralCraftsmanshipSection() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div ref={headlineRef} className="max-w-3xl mb-16 sm:mb-20">
-          <div className="flex items-center gap-3 mb-4">
+        <div ref={headlineRef} className="max-w-3xl mb-16 sm:mb-20 reveal-fade-up">
+          <div className="flex items-center gap-3 mb-4 reveal-fade-up reveal-delay-75">
             <span className="w-8 h-[1px] bg-[#6F8369]" />
             <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#6F8369] font-semibold">
               Documentary Stories • Artisans of Urvaa
             </span>
           </div>
 
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#101F17] tracking-tight leading-[1.08] reveal-fade-up reveal-delay-150">
             Where tradition <br />
             <span className="italic font-normal text-[#1A3427]">becomes tomorrow.</span>
           </h2>
 
-          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed max-w-2xl">
+          <p className="mt-6 text-sm sm:text-base text-[#5E625A] font-light leading-relaxed max-w-2xl reveal-fade-up reveal-delay-200">
             Inspired by real village lives and documented directly across India’s rural heartlands. Behind every single plate, jar of wild nectar, and harvest grain are living faces, sacred traditions, and skilled human hands.
           </p>
         </div>
@@ -132,7 +132,15 @@ export default function RuralCraftsmanshipSection() {
             {stories.map((story, idx) => (
               <div
                 key={story.id}
-                className="w-[84vw] sm:w-[420px] lg:w-[480px] max-w-[500px] flex-shrink-0 snap-start liquid-glass rounded-3xl border border-white/80 p-5 sm:p-7 flex flex-col justify-between group hover:border-[#101F17]/40 transition-all duration-500 shadow-[0_16px_40px_rgba(16,31,23,0.06)] hover:shadow-[0_24px_50px_rgba(16,31,23,0.12)]"
+                className={`w-[84vw] sm:w-[420px] lg:w-[480px] max-w-[500px] flex-shrink-0 snap-start liquid-glass rounded-3xl border border-white/80 p-5 sm:p-7 flex flex-col justify-between group hover:border-[#101F17]/40 transition-all duration-500 shadow-[0_16px_40px_rgba(16,31,23,0.06)] hover:shadow-[0_24px_50px_rgba(16,31,23,0.12)] reveal-fade-up ${
+                  idx === 0
+                    ? "reveal-delay-150"
+                    : idx === 1
+                    ? "reveal-delay-250"
+                    : idx === 2
+                    ? "reveal-delay-350"
+                    : "reveal-delay-450"
+                }`}
               >
                 <div>
                   {/* Photo Frame */}
@@ -208,7 +216,7 @@ export default function RuralCraftsmanshipSection() {
         </div>
 
         {/* Impact Bar in Liquid Glass */}
-        <div className="mt-20 pt-8 liquid-glass rounded-3xl p-6 sm:p-8 border border-white/80 shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+        <div className="mt-20 pt-8 liquid-glass rounded-3xl p-6 sm:p-8 border border-white/80 shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-4 text-center reveal-fade-up reveal-delay-300">
           <div className="p-5 liquid-glass rounded-2xl border border-white/60 shadow-sm">
             <div className="font-serif text-3xl sm:text-4xl text-[#101F17] font-normal">520+</div>
             <div className="text-[11px] uppercase tracking-wider font-sans text-[#6F8369] mt-1">

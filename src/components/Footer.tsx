@@ -33,7 +33,7 @@ export default function Footer() {
       {/* Inquiry / Bulk Procurement Section */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 pb-16 border-b border-white/10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-4 reveal-fade-up">
             <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#DF9F52] font-semibold block">
               Bespoke & Institutional Inquiries
             </span>
@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 liquid-glass-dark rounded-3xl border border-white/20 p-6 sm:p-8 shadow-2xl">
+          <div className="lg:col-span-7 liquid-glass-dark rounded-3xl border border-white/20 p-6 sm:p-8 shadow-2xl reveal-fade-up reveal-delay-200">
             {inquirySubmitted ? (
               <div className="py-12 text-center space-y-3">
                 <div className="w-12 h-12 rounded-full bg-[#DF9F52]/20 text-[#DF9F52] flex items-center justify-center mx-auto">
@@ -167,7 +167,7 @@ export default function Footer() {
 
       {/* Main Footer Links & Brand Section */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 reveal-fade-up">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <UrvaBrandLogo variant="light" size="lg" showTagline={true} />
