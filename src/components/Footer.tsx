@@ -155,7 +155,7 @@ export default function Footer() {
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 sm:py-3.5 px-4 sm:px-6 bg-[#DF9F52] hover:bg-[#E8B86D] text-[#0A140E] text-[10.5px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
+                  className="w-full py-3.5 sm:py-4 px-6 sm:px-8 bg-[#DF9F52] hover:bg-[#E8B86D] text-[#0A140E] text-[10.5px] sm:text-xs uppercase font-sans tracking-[0.08em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center text-center leading-normal"
                 >
                   Submit Wholesale / Custom Request
                 </button>

@@ -118,12 +118,12 @@ export default function BrandStorySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Creative Multi-Perspective Visual Showcase */}
           <div className="lg:col-span-6 relative">
-            {/* Interactive Viewport Stage */}
+            {/* Interactive Viewport Stage — Increased height on mobile to ensure ample breathing room for all badges & controls */}
             <div
               ref={imageBoxRef}
               onMouseEnter={() => setIsRotating(false)}
               onMouseLeave={() => setIsRotating(true)}
-              className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[0_24px_60px_rgba(16,31,23,0.14)] bg-[#EAE4D7] border border-white/80 group"
+              className="relative h-[530px] sm:h-auto sm:aspect-[4/5] min-h-[520px] sm:min-h-0 w-full overflow-hidden rounded-3xl shadow-[0_24px_60px_rgba(16,31,23,0.14)] bg-[#EAE4D7] border border-white/80 group"
             >
               {/* Dynamic Main Photograph with smooth crossfade and zoom */}
               <div key={currentView.id} className="absolute inset-0 animate-fadeIn">
@@ -138,26 +138,27 @@ export default function BrandStorySection() {
               </div>
 
               {/* Artistic Vignette and Contrast Gradients */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A120D]/80 via-black/15 to-black/25 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A120D]/85 via-black/20 to-black/25 pointer-events-none" />
 
-              {/* Top Bar: Provenance Coordinates & Live Indicator */}
-              <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between z-20 pointer-events-none">
-                <div className="flex items-center gap-2 liquid-glass-dark rounded-full px-3 sm:px-3.5 py-1.5 border border-white/20 shadow-md">
+              {/* Top Bar: Provenance Coordinates & Live Indicator — Strictly on One Line */}
+              <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between gap-2 z-20 pointer-events-none">
+                <div className="flex items-center gap-1.5 liquid-glass-dark rounded-full px-2.5 sm:px-3.5 py-1 sm:py-1.5 border border-white/20 shadow-md max-w-[170px] sm:max-w-xs flex-shrink min-w-0">
                   <MapPin size={11} className="text-[#DF9F52] flex-shrink-0 animate-pulse" />
-                  <span className="text-[10px] font-mono tracking-wider text-[#FAF7F2] truncate max-w-[145px] sm:max-w-xs">
+                  <span className="text-[9.5px] sm:text-[10px] font-mono tracking-wider text-[#FAF7F2] truncate">
                     {currentView.location}
                   </span>
                 </div>
 
-                <div className="liquid-glass-dark rounded-full px-3 py-1 text-[9.5px] font-mono uppercase tracking-widest text-[#DF9F52] border border-white/20 shadow-md flex-shrink-0">
-                  0{activeViewIndex + 1} / 0{storyViews.length}
+                {/* Counter Pill — Guaranteed Single-Line on Mobile */}
+                <div className="liquid-glass-dark rounded-full px-2.5 sm:px-3 py-1 text-[9.5px] sm:text-[10px] font-mono uppercase tracking-wider text-[#DF9F52] border border-white/20 shadow-md flex-shrink-0 whitespace-nowrap">
+                  0{activeViewIndex + 1}&nbsp;/&nbsp;0{storyViews.length}
                 </div>
               </div>
 
               {/* Rotating Circular Authentic URVA Seal Badge with Official Logo */}
-              {/* Positioned on left side to completely avoid colliding with the top-right phase numbers (01/03) */}
-              <div className="absolute top-16 sm:top-20 left-4 sm:left-5 z-20 pointer-events-none">
-                <div className="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
+              {/* Positioned on left side with comfortable breathing room below top-bar */}
+              <div className="absolute top-14 sm:top-20 left-4 sm:left-5 z-20 pointer-events-none">
+                <div className="relative w-14 h-14 sm:w-22 sm:h-22 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
                   {/* Rotating Circular Text SVG */}
                   <svg
                     className="w-full h-full animate-[spin_20s_linear_infinite]"
@@ -175,13 +176,13 @@ export default function BrandStorySection() {
                     </text>
                   </svg>
                   {/* Center Official URVA Logo Emblem */}
-                  <div className="absolute w-7 h-7 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
+                  <div className="absolute w-6 h-6 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
                     <Image
                       src="/images/urva-official-circle.png"
                       alt="URVA Official Logo"
                       fill
                       className="object-cover"
-                      sizes="44px"
+                      sizes="40px"
                     />
                   </div>
                 </div>
@@ -193,26 +194,26 @@ export default function BrandStorySection() {
                 <div className="flex justify-end mb-2 sm:mb-2.5">
                   <button
                     onClick={() => setActiveViewIndex((activeViewIndex + 1) % storyViews.length)}
-                    className="pointer-events-auto liquid-glass rounded-2xl p-2 border border-white/90 shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[180px] sm:max-w-[200px] text-left group/inset"
+                    className="pointer-events-auto liquid-glass rounded-2xl p-1.5 sm:p-2 border border-white/90 shadow-2xl flex items-center gap-2 sm:gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[170px] sm:max-w-[200px] text-left group/inset"
                     title="Click to switch perspective"
                   >
-                    <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
+                    <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
                       <Image
                         src={nextView.image}
                         alt={nextView.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover/inset:scale-110"
-                        sizes="48px"
+                        sizes="44px"
                       />
                       <div className="absolute inset-0 bg-black/15 flex items-center justify-center">
-                        <RefreshCw size={12} className="text-white drop-shadow" />
+                        <RefreshCw size={11} className="text-white drop-shadow" />
                       </div>
                     </div>
                     <div className="min-w-0 pr-1">
-                      <span className="text-[8px] sm:text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
+                      <span className="text-[7.5px] sm:text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
                         Next View
                       </span>
-                      <span className="text-[10.5px] sm:text-[11px] font-serif font-medium text-[#101F17] truncate block">
+                      <span className="text-[10px] sm:text-[11px] font-serif font-medium text-[#101F17] truncate block">
                         {nextView.title}
                       </span>
                     </div>
@@ -220,16 +221,16 @@ export default function BrandStorySection() {
                 </div>
 
                 {/* Bottom Inset Quote Card in Liquid Glass — Unobstructed & Clean */}
-                <div className="pointer-events-auto p-4 sm:p-5 liquid-glass rounded-2xl border border-white/80 text-left shadow-xl">
+                <div className="pointer-events-auto p-3.5 sm:p-5 liquid-glass rounded-2xl border border-white/80 text-left shadow-xl">
                   <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="text-[9.5px] font-sans uppercase tracking-[0.25em] text-[#9E5338] font-semibold block">
+                    <span className="text-[9px] sm:text-[9.5px] font-sans uppercase tracking-[0.25em] text-[#9E5338] font-semibold block">
                       {currentView.tag}
                     </span>
                     <span className="text-[9.5px] font-serif italic text-[#5E625A] hidden sm:inline">
                       Tap above to change viewpoint
                     </span>
                   </div>
-                  <p className="font-serif italic text-sm sm:text-base text-[#101F17] leading-snug">
+                  <p className="font-serif italic text-[13px] sm:text-base text-[#101F17] leading-snug">
                     “{currentView.quote}”
                   </p>
                   <p className="text-[11px] text-[#5E625A] mt-1 font-light leading-relaxed hidden sm:block">
