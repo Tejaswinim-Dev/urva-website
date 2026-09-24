@@ -187,50 +187,55 @@ export default function BrandStorySection() {
                 </div>
               </div>
 
-              {/* Secondary Floating Perspective Switcher — Positioned safely in upper-middle right above quote paragraph */}
-              <button
-                onClick={() => setActiveViewIndex((activeViewIndex + 1) % storyViews.length)}
-                className="absolute top-[152px] sm:top-[204px] right-3.5 sm:right-6 z-30 liquid-glass rounded-2xl p-2 border border-white/90 shadow-xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[175px] sm:max-w-[195px] text-left group/inset"
-                title="Click to switch perspective"
-              >
-                <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
-                  <Image
-                    src={nextView.image}
-                    alt={nextView.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover/inset:scale-110"
-                    sizes="48px"
-                  />
-                  <div className="absolute inset-0 bg-black/15 flex items-center justify-center">
-                    <RefreshCw size={12} className="text-white drop-shadow" />
-                  </div>
+              {/* Bottom Inset Region: Next View positioned at right end directly on top of the paragraph card */}
+              <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 z-20 pointer-events-none">
+                {/* Secondary Floating Perspective Switcher — Right End on Top of the Para Card */}
+                <div className="flex justify-end mb-2 sm:mb-2.5">
+                  <button
+                    onClick={() => setActiveViewIndex((activeViewIndex + 1) % storyViews.length)}
+                    className="pointer-events-auto liquid-glass rounded-2xl p-2 border border-white/90 shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[180px] sm:max-w-[200px] text-left group/inset"
+                    title="Click to switch perspective"
+                  >
+                    <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
+                      <Image
+                        src={nextView.image}
+                        alt={nextView.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover/inset:scale-110"
+                        sizes="48px"
+                      />
+                      <div className="absolute inset-0 bg-black/15 flex items-center justify-center">
+                        <RefreshCw size={12} className="text-white drop-shadow" />
+                      </div>
+                    </div>
+                    <div className="min-w-0 pr-1">
+                      <span className="text-[8px] sm:text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
+                        Next View
+                      </span>
+                      <span className="text-[10.5px] sm:text-[11px] font-serif font-medium text-[#101F17] truncate block">
+                        {nextView.title}
+                      </span>
+                    </div>
+                  </button>
                 </div>
-                <div className="min-w-0 pr-1">
-                  <span className="text-[8px] sm:text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
-                    Next View
-                  </span>
-                  <span className="text-[10.5px] sm:text-[11px] font-serif font-medium text-[#101F17] truncate block">
-                    {nextView.title}
-                  </span>
-                </div>
-              </button>
 
-              {/* Bottom Inset Quote Card in Liquid Glass — Unobstructed & Clean */}
-              <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 p-4 sm:p-5 liquid-glass rounded-2xl border border-white/80 text-left shadow-xl z-20">
-                <div className="flex items-center justify-between gap-2 mb-1">
-                  <span className="text-[9.5px] font-sans uppercase tracking-[0.25em] text-[#9E5338] font-semibold block">
-                    {currentView.tag}
-                  </span>
-                  <span className="text-[9.5px] font-serif italic text-[#5E625A] hidden sm:inline">
-                    Tap below to change viewpoint
-                  </span>
+                {/* Bottom Inset Quote Card in Liquid Glass — Unobstructed & Clean */}
+                <div className="pointer-events-auto p-4 sm:p-5 liquid-glass rounded-2xl border border-white/80 text-left shadow-xl">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-[9.5px] font-sans uppercase tracking-[0.25em] text-[#9E5338] font-semibold block">
+                      {currentView.tag}
+                    </span>
+                    <span className="text-[9.5px] font-serif italic text-[#5E625A] hidden sm:inline">
+                      Tap above to change viewpoint
+                    </span>
+                  </div>
+                  <p className="font-serif italic text-sm sm:text-base text-[#101F17] leading-snug">
+                    “{currentView.quote}”
+                  </p>
+                  <p className="text-[11px] text-[#5E625A] mt-1 font-light leading-relaxed hidden sm:block">
+                    {currentView.detail}
+                  </p>
                 </div>
-                <p className="font-serif italic text-sm sm:text-base text-[#101F17] leading-snug">
-                  “{currentView.quote}”
-                </p>
-                <p className="text-[11px] text-[#5E625A] mt-1 font-light leading-relaxed hidden sm:block">
-                  {currentView.detail}
-                </p>
               </div>
             </div>
 
