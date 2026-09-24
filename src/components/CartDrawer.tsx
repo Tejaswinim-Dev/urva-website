@@ -315,12 +315,12 @@ export default function CartDrawer() {
                   <div className="space-y-3 pt-1">
                     <button
                       onClick={() => setStep("address")}
-                      className="w-full py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
+                      className="w-full py-3.5 sm:py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
                     >
                       <span>Proceed to Delivery & Checkout</span>
                       <ArrowRight
                         size={14}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
+                        className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
                       />
                     </button>
 
@@ -385,7 +385,7 @@ export default function CartDrawer() {
                       type="text"
                       value={address.name}
                       onChange={(e) => setAddress({ ...address, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                       placeholder="e.g. Ananya Sharma"
                     />
                   </div>
@@ -399,7 +399,7 @@ export default function CartDrawer() {
                         type="text"
                         value={address.phone}
                         onChange={(e) => setAddress({ ...address, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                       />
                     </div>
                     <div>
@@ -410,7 +410,7 @@ export default function CartDrawer() {
                         type="email"
                         value={address.email}
                         onChange={(e) => setAddress({ ...address, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                       />
                     </div>
                   </div>
@@ -423,7 +423,7 @@ export default function CartDrawer() {
                       type="text"
                       value={address.street}
                       onChange={(e) => setAddress({ ...address, street: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                     />
                   </div>
 
@@ -436,7 +436,7 @@ export default function CartDrawer() {
                         type="text"
                         value={address.city}
                         onChange={(e) => setAddress({ ...address, city: e.target.value })}
-                        className="w-full px-3.5 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                        className="w-full px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                       />
                     </div>
                     <div>
@@ -447,7 +447,7 @@ export default function CartDrawer() {
                         type="text"
                         value={address.state}
                         onChange={(e) => setAddress({ ...address, state: e.target.value })}
-                        className="w-full px-3.5 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
+                        className="w-full px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-medium shadow-sm transition-colors"
                       />
                     </div>
                     <div>
@@ -458,7 +458,7 @@ export default function CartDrawer() {
                         type="text"
                         value={address.pincode}
                         onChange={(e) => setAddress({ ...address, pincode: e.target.value })}
-                        className="w-full px-3.5 py-3 bg-white/80 rounded-xl border border-white/80 text-[#101F17] focus:border-[#101F17] outline-none font-mono font-medium shadow-sm transition-colors"
+                        className="w-full px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white/80 rounded-xl border border-white/80 text-xs text-[#101F17] focus:border-[#101F17] outline-none font-mono font-medium shadow-sm transition-colors"
                       />
                     </div>
                   </div>
@@ -488,10 +488,10 @@ export default function CartDrawer() {
 
                 <button
                   onClick={() => setStep("payment")}
-                  className="w-full py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
+                  className="w-full py-3.5 sm:py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
                 >
                   <span>Continue to Secure Payment</span>
-                  <ArrowRight size={14} />
+                  <ArrowRight size={14} className="flex-shrink-0" />
                 </button>
               </div>
             </>
@@ -708,7 +708,7 @@ export default function CartDrawer() {
                 <button
                   onClick={handlePlaceOrder}
                   disabled={isProcessing}
-                  className="w-full py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] disabled:opacity-75"
+                  className="w-full py-3.5 sm:py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] disabled:opacity-75 text-center"
                 >
                   {isProcessing ? (
                     <>
@@ -718,7 +718,7 @@ export default function CartDrawer() {
                   ) : (
                     <>
                       <span>Confirm & Pay ₹{totalPrice.toLocaleString("en-IN")}</span>
-                      <ArrowRight size={14} />
+                      <ArrowRight size={14} className="flex-shrink-0" />
                     </>
                   )}
                 </button>

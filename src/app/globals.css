@@ -117,9 +117,25 @@ body {
   min-height: 100dvh;
 }
 
-img, video, canvas, svg {
+img, canvas, svg {
   max-width: 100%;
   height: auto;
+}
+
+video {
+  max-width: 100%;
+}
+
+.hero-bg-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  pointer-events: none !important;
 }
 
 /* Grain overlay for warm tactile feeling */

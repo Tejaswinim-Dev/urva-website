@@ -65,6 +65,18 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/images/urva-official-circle.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/images/urva-official-circle.png",
+    apple: [
+      { url: "/apple-touch-icon.png" },
+      { url: "/images/urva-official-circle.png" },
+    ],
+  },
 };
 
 export default function RootLayout({

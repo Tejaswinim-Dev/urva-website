@@ -141,22 +141,23 @@ export default function BrandStorySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A120D]/80 via-black/15 to-black/25 pointer-events-none" />
 
               {/* Top Bar: Provenance Coordinates & Live Indicator */}
-              <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between z-20">
-                <div className="flex items-center gap-2 liquid-glass-dark rounded-full px-3.5 py-1.5 border border-white/20 shadow-md">
+              <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between z-20 pointer-events-none">
+                <div className="flex items-center gap-2 liquid-glass-dark rounded-full px-3 sm:px-3.5 py-1.5 border border-white/20 shadow-md">
                   <MapPin size={11} className="text-[#DF9F52] flex-shrink-0 animate-pulse" />
-                  <span className="text-[10px] font-mono tracking-wider text-[#FAF7F2] truncate max-w-[190px] sm:max-w-xs">
+                  <span className="text-[10px] font-mono tracking-wider text-[#FAF7F2] truncate max-w-[145px] sm:max-w-xs">
                     {currentView.location}
                   </span>
                 </div>
 
-                <div className="liquid-glass-dark rounded-full px-3 py-1 text-[9.5px] font-mono uppercase tracking-widest text-[#DF9F52] border border-white/20 shadow-md">
+                <div className="liquid-glass-dark rounded-full px-3 py-1 text-[9.5px] font-mono uppercase tracking-widest text-[#DF9F52] border border-white/20 shadow-md flex-shrink-0">
                   0{activeViewIndex + 1} / 0{storyViews.length}
                 </div>
               </div>
 
               {/* Rotating Circular Authentic URVA Seal Badge with Official Logo */}
-              <div className="absolute top-14 right-3 sm:top-18 sm:right-6 z-20 pointer-events-none">
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
+              {/* Positioned with clear 40px+ clearance below the top-right counter to eliminate collision */}
+              <div className="absolute top-20 right-3.5 sm:top-24 sm:right-6 z-20 pointer-events-none">
+                <div className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
                   {/* Rotating Circular Text SVG */}
                   <svg
                     className="w-full h-full animate-[spin_20s_linear_infinite]"
@@ -174,7 +175,7 @@ export default function BrandStorySection() {
                     </text>
                   </svg>
                   {/* Center Official URVA Logo Emblem */}
-                  <div className="absolute w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
+                  <div className="absolute w-7 h-7 sm:w-11 sm:h-11 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
                     <Image
                       src="/images/urva-official-circle.png"
                       alt="URVA Official Logo"
@@ -186,13 +187,13 @@ export default function BrandStorySection() {
                 </div>
               </div>
 
-              {/* Overlapping Secondary Floating Inset Card — Click to Swap Perspective */}
+              {/* Secondary Floating Perspective Switcher — Positioned safely in upper-middle right above quote paragraph */}
               <button
                 onClick={() => setActiveViewIndex((activeViewIndex + 1) % storyViews.length)}
-                className="absolute bottom-28 sm:bottom-32 right-4 sm:right-6 z-30 liquid-glass rounded-2xl p-2 border border-white/90 shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[190px] text-left group/inset"
+                className="absolute top-[152px] sm:top-[204px] right-3.5 sm:right-6 z-30 liquid-glass rounded-2xl p-2 border border-white/90 shadow-xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer max-w-[175px] sm:max-w-[195px] text-left group/inset"
                 title="Click to switch perspective"
               >
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
+                <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden flex-shrink-0 border border-white/60">
                   <Image
                     src={nextView.image}
                     alt={nextView.title}
@@ -201,20 +202,20 @@ export default function BrandStorySection() {
                     sizes="48px"
                   />
                   <div className="absolute inset-0 bg-black/15 flex items-center justify-center">
-                    <RefreshCw size={13} className="text-white drop-shadow" />
+                    <RefreshCw size={12} className="text-white drop-shadow" />
                   </div>
                 </div>
                 <div className="min-w-0 pr-1">
-                  <span className="text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
+                  <span className="text-[8px] sm:text-[8.5px] uppercase font-sans tracking-widest text-[#9E5338] font-bold block">
                     Next View
                   </span>
-                  <span className="text-[11px] font-serif font-medium text-[#101F17] truncate block">
+                  <span className="text-[10.5px] sm:text-[11px] font-serif font-medium text-[#101F17] truncate block">
                     {nextView.title}
                   </span>
                 </div>
               </button>
 
-              {/* Bottom Inset Quote Card in Liquid Glass */}
+              {/* Bottom Inset Quote Card in Liquid Glass — Unobstructed & Clean */}
               <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 p-4 sm:p-5 liquid-glass rounded-2xl border border-white/80 text-left shadow-xl z-20">
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <span className="text-[9.5px] font-sans uppercase tracking-[0.25em] text-[#9E5338] font-semibold block">
@@ -235,7 +236,7 @@ export default function BrandStorySection() {
 
             {/* Creative Liquid Glass View Selector Tabs */}
             <div className="mt-5 flex justify-center">
-              <div className="inline-flex liquid-glass rounded-full p-1.5 border border-white/70 shadow-md gap-1.5">
+              <div className="inline-flex liquid-glass rounded-full p-1.5 border border-white/70 shadow-md gap-1 sm:gap-1.5">
                 {storyViews.map((view, idx) => (
                   <button
                     key={view.id}
@@ -243,7 +244,7 @@ export default function BrandStorySection() {
                       setActiveViewIndex(idx);
                       setIsRotating(false);
                     }}
-                    className={`px-4 py-2 text-[10.5px] uppercase font-sans tracking-[0.2em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 text-[9.5px] sm:text-[10.5px] uppercase font-sans tracking-[0.14em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
                       activeViewIndex === idx
                         ? "bg-[#101F17] text-[#FAF7F2] shadow-md scale-100"
                         : "text-[#5E625A] hover:text-[#101F17] hover:bg-white/50"
@@ -306,7 +307,7 @@ export default function BrandStorySection() {
             <div className="pt-2 reveal-fade-up reveal-delay-300">
               <a
                 href="#tableware"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-xs uppercase font-sans tracking-[0.24em] font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] group cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.24em] font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] group cursor-pointer text-center"
               >
                 <span>Explore Sustainable Tableware</span>
                 <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />

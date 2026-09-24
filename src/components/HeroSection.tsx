@@ -39,16 +39,20 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen min-h-[100dvh] w-full max-w-full flex flex-col justify-between overflow-hidden bg-[#0A120D] text-[#FAF7F2] pt-24 sm:pt-36 lg:pt-44 pb-12 sm:pb-16"
+      className="relative isolate min-h-screen min-h-[100dvh] w-full max-w-full flex flex-col justify-center sm:justify-between overflow-hidden bg-[#0A120D] text-[#FAF7F2] pt-20 sm:pt-36 lg:pt-44 pb-10 sm:pb-16"
     >
-      {/* Full-Bleed Bright & Polished Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+      {/* Full-Bleed Background Video — True Background Layer on All Screens */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-100"
+          // @ts-expect-error webkit-playsinline attribute for iOS Safari
+          webkit-playsinline="true"
+          poster="/images/hero-landscape.jpg"
+          preload="auto"
+          className="hero-bg-video scale-100"
           style={{
             filter: "brightness(1.08) contrast(1.06) saturate(1.18)",
           }}
@@ -59,19 +63,19 @@ export default function HeroSection() {
 
         {/* Minimal, Classic & Luminous Overlays (Keeps the video bright & vivid!) */}
         {/* Soft top gradient to ensure navbar legibility */}
-        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/55 via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-b from-black/60 via-black/25 to-transparent pointer-events-none" />
 
-        {/* 50% Contrast Layer to make all hero text highlight sharply over the video */}
-        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        {/* Contrast Layer to make all hero text highlight sharply over the video */}
+        <div className="absolute inset-0 bg-black/45 pointer-events-none" />
 
         {/* Soft bottom transition gradient into the next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-28 sm:h-48 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content — Centered with Generous Space below the Navbar */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center my-auto w-full">
         {/* Concept Credit Badge — Liquid Glass Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/35 bg-black/45 backdrop-blur-xl mb-5 sm:mb-7 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.2em] sm:tracking-[0.26em] text-[#FAF7F2] shadow-[0_8px_25px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)]">
+        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/35 bg-black/45 backdrop-blur-xl mb-4 sm:mb-7 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.2em] sm:tracking-[0.26em] text-[#FAF7F2] shadow-[0_8px_25px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#DF9F52] animate-pulse flex-shrink-0" />
           <span className="text-[#E8B86D] font-semibold truncate">Website concept by OneMario</span>
           <span className="text-white/40">•</span>
@@ -90,7 +94,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Brand Tagline & Supporting Statement */}
-        <div ref={sublineRef} className="mt-5 sm:mt-8 space-y-2 max-w-2xl px-2">
+        <div ref={sublineRef} className="mt-4 sm:mt-8 space-y-2 max-w-2xl px-2">
           <p className="font-serif italic text-base sm:text-xl md:text-2xl text-[#FAF7F2] font-light tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             “Delivering the Rural Aura”
           </p>
@@ -99,20 +103,20 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Action CTAs — Curved Pills & Liquid Glass */}
+        {/* Action CTAs — Curved Pills & Liquid Glass with Balanced Mobile Spacing */}
         <div
           ref={ctaRef}
-          className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center gap-3.5 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
+          className="mt-7 sm:mt-12 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
         >
           <a
             href="#carousel"
-            className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4.5 rounded-full bg-[#FAF7F2] text-[#0A120D] hover:bg-white text-xs uppercase font-sans tracking-[0.22em] sm:tracking-[0.25em] font-semibold transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 cursor-pointer text-center"
+            className="w-full sm:w-auto px-7 sm:px-10 py-3 sm:py-4 rounded-full bg-[#FAF7F2] text-[#0A120D] hover:bg-white text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.25em] font-semibold transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 cursor-pointer text-center"
           >
             Explore Collection
           </a>
           <a
             href="#story"
-            className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4.5 rounded-full border border-white/40 text-white hover:bg-white/20 bg-white/10 backdrop-blur-xl text-xs uppercase font-sans tracking-[0.22em] sm:tracking-[0.25em] font-medium transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 cursor-pointer text-center"
+            className="w-full sm:w-auto px-7 sm:px-10 py-3 sm:py-4 rounded-full border border-white/40 text-white hover:bg-white/20 bg-white/10 backdrop-blur-xl text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.25em] font-medium transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 cursor-pointer text-center"
           >
             Our Story
           </a>

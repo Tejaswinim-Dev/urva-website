@@ -290,7 +290,7 @@ export default function QuickViewModal() {
                       setQuickViewProduct(null);
                       setIsCartOpen(true);
                     }}
-                    className="w-full sm:flex-1 py-3.5 px-4 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] text-center"
+                    className="w-full sm:flex-1 py-3 sm:py-3.5 px-4 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] text-center"
                   >
                     <span>Proceed to Basket</span>
                     <ArrowRight size={13} />
@@ -298,7 +298,7 @@ export default function QuickViewModal() {
 
                   <button
                     onClick={() => setQuickViewProduct(null)}
-                    className="w-full sm:flex-1 py-3.5 px-4 liquid-glass hover:bg-white text-[#1C1E1B] border border-white/80 text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] text-center"
+                    className="w-full sm:flex-1 py-3 sm:py-3.5 px-4 liquid-glass hover:bg-white text-[#1C1E1B] border border-white/80 text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] text-center"
                   >
                     <span>Continue Exploring</span>
                   </button>
@@ -315,12 +315,12 @@ export default function QuickViewModal() {
                   );
                   setIsAdded(true);
                 }}
-                className="w-full py-4 px-6 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-xs uppercase font-sans tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full py-3 sm:py-3.5 px-4 sm:px-6 bg-[#101F17] hover:bg-[#1A3427] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
               >
                 <span>Add {modalQuantity > 1 ? `(${modalQuantity}) ` : ""}to Basket — ₹{(unitPrice * modalQuantity).toLocaleString("en-IN")}</span>
                 <ArrowRight
                   size={14}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
                 />
               </button>
             )}

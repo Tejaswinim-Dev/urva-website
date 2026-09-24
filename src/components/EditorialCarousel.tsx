@@ -303,7 +303,7 @@ export default function EditorialCarousel() {
             <div className="pt-4 border-t border-[#1C1E1B]/10 flex items-center gap-4">
               <button
                 onClick={() => setQuickViewProduct(current)}
-                className="flex-1 py-3.5 sm:py-4 px-4 sm:px-8 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.25em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
+                className="flex-1 py-3 sm:py-3.5 px-4 sm:px-6 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-[10.5px] sm:text-xs uppercase font-sans tracking-[0.15em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
               >
                 <Eye size={14} />
                 <span>Preview & Select</span>

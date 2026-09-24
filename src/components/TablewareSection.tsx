@@ -309,7 +309,7 @@ export default function TablewareSection() {
               <div className="flex flex-col sm:flex-row gap-2.5">
                 <button
                   onClick={() => setQuickViewProduct(currentProduct)}
-                  className="sm:w-auto px-5 py-3.5 liquid-glass hover:bg-white text-[#101F17] border border-white/80 text-xs uppercase font-sans tracking-[0.16em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-4 sm:px-5 py-3 sm:py-3.5 liquid-glass hover:bg-white text-[#101F17] border border-white/80 text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.16em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <span>Preview Details</span>
                 </button>
@@ -318,12 +318,12 @@ export default function TablewareSection() {
                   onClick={() => {
                     addToCart(currentProduct, `${selectedSize} inch — 90 GSM`, true, tablewareQuantity);
                   }}
-                  className="flex-1 py-3.5 px-6 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
+                  className="w-full sm:flex-1 py-3 sm:py-3.5 px-4 sm:px-6 bg-[#101F17] hover:bg-[#1E3528] text-[#FAF7F2] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.2em] font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
                 >
                   <span>Add to Basket — ₹{(currentProduct.price * tablewareQuantity).toLocaleString("en-IN")}</span>
                   <ArrowRight
                     size={14}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
                   />
                 </button>
               </div>
