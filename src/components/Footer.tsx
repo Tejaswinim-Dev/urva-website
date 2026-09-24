@@ -90,7 +90,7 @@ export default function Footer() {
                       value={inquiryData.name}
                       onChange={(e) => setInquiryData({ ...inquiryData, name: e.target.value })}
                       placeholder="e.g. Radhika Sharma"
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
                     />
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export default function Footer() {
                       value={inquiryData.email}
                       onChange={(e) => setInquiryData({ ...inquiryData, email: e.target.value })}
                       placeholder="radhika@example.com"
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
                     />
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                       value={inquiryData.phone}
                       onChange={(e) => setInquiryData({ ...inquiryData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
                     />
                   </div>
                   <div>
@@ -129,7 +129,7 @@ export default function Footer() {
                     <select
                       value={inquiryData.type}
                       onChange={(e) => setInquiryData({ ...inquiryData, type: e.target.value })}
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] focus:outline-none focus:border-[#DF9F52] transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] focus:outline-none focus:border-[#DF9F52] transition-colors"
                     >
                       <option value="Wedding / Event Tableware">Eco-Wedding / Event Tableware</option>
                       <option value="Wild Honey Corporate Gifting">Wild Honey Corporate Gifting</option>
@@ -145,17 +145,17 @@ export default function Footer() {
                     Requirements & Estimated Quantities
                   </label>
                   <textarea
-                    rows={3}
+                    rows={2}
                     value={inquiryData.message}
                     onChange={(e) => setInquiryData({ ...inquiryData, message: e.target.value })}
                     placeholder="Tell us about your event date, required quantities (e.g. 500 plates of 12 inch 90 GSM), or honey jars..."
-                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#0A140E]/80 rounded-xl border border-white/15 text-xs text-[#FAF7F2] placeholder-white/30 focus:outline-none focus:border-[#DF9F52] transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 sm:py-3.5 px-5 sm:px-6 bg-[#DF9F52] hover:bg-[#E8B86D] text-[#0A140E] text-[11px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
+                  className="w-full py-2.5 sm:py-3.5 px-4 sm:px-6 bg-[#DF9F52] hover:bg-[#E8B86D] text-[#0A140E] text-[10.5px] sm:text-xs uppercase font-sans tracking-[0.14em] sm:tracking-[0.22em] font-semibold rounded-full transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] text-center"
                 >
                   Submit Wholesale / Custom Request
                 </button>

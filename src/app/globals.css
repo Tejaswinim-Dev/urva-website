@@ -126,16 +126,51 @@ video {
   max-width: 100%;
 }
 
+/* Full-bleed hero background video covering both mobile and desktop seamlessly */
 .hero-bg-video {
   position: absolute !important;
-  inset: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
   min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: cover !important;
-  object-position: center !important;
+  object-position: center center !important;
   pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* On portrait screens (mobile phones, aspect ratio < 16:9), height is dominant */
+@media (max-aspect-ratio: 16/9) {
+  .hero-bg-video {
+    width: auto !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    /* 16:9 aspect ratio: 100 * 16 / 9 = 177.78vh to cover full width */
+    min-width: 178vh !important;
+    min-width: 178dvh !important;
+    max-width: none !important;
+  }
+}
+
+/* On landscape screens (laptops, monitors, aspect ratio >= 16:9), width is dominant */
+@media (min-aspect-ratio: 16/9) {
+  .hero-bg-video {
+    width: 100% !important;
+    min-width: 100% !important;
+    min-width: 100vw !important;
+    /* 16:9 aspect ratio: 100 * 9 / 16 = 56.25vw to cover full height */
+    height: auto !important;
+    min-height: 57vw !important;
+    min-height: 100% !important;
+    max-height: none !important;
+  }
 }
 
 /* Grain overlay for warm tactile feeling */

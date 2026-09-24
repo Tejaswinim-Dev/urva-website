@@ -67,21 +67,21 @@ export default function FinalCTASection() {
               <span>Thank you. You are now rooted with Urvaa.</span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="liquid-glass rounded-full p-1 sm:p-1.5 border border-white/80 shadow-md flex items-center gap-1.5 sm:gap-2">
+            <form onSubmit={handleSubmit} className="liquid-glass rounded-full p-1 sm:p-1.5 border border-white/80 shadow-md flex items-center gap-1 sm:gap-2">
               <input
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 px-3.5 sm:px-4 py-2 sm:py-2.5 bg-transparent text-xs text-[#1C1E1B] placeholder-[#5E625A]/60 focus:outline-none min-w-0"
+                className="flex-1 px-3 sm:px-4 py-1.5 sm:py-2.5 bg-transparent text-xs text-[#1C1E1B] placeholder-[#5E625A]/60 focus:outline-none min-w-0"
               />
               <button
                 type="submit"
-                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-[#101F17] text-[#FAF7F2] text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-full hover:bg-[#1E3528] transition-all duration-300 flex items-center gap-1.5 shadow-sm hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex-shrink-0"
+                className="px-3.5 sm:px-6 py-1.5 sm:py-2.5 bg-[#101F17] text-[#FAF7F2] text-[10.5px] sm:text-xs uppercase tracking-wider font-semibold rounded-full hover:bg-[#1E3528] transition-all duration-300 flex items-center gap-1.5 shadow-sm hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex-shrink-0"
               >
                 <span>Join</span>
-                <Send size={12} />
+                <Send size={11} />
               </button>
             </form>
           )}

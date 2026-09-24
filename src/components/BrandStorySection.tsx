@@ -155,9 +155,9 @@ export default function BrandStorySection() {
               </div>
 
               {/* Rotating Circular Authentic URVA Seal Badge with Official Logo */}
-              {/* Positioned with clear 40px+ clearance below the top-right counter to eliminate collision */}
-              <div className="absolute top-20 right-3.5 sm:top-24 sm:right-6 z-20 pointer-events-none">
-                <div className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
+              {/* Positioned on left side to completely avoid colliding with the top-right phase numbers (01/03) */}
+              <div className="absolute top-16 sm:top-20 left-4 sm:left-5 z-20 pointer-events-none">
+                <div className="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full liquid-glass-dark border border-[#DF9F52]/45 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-center">
                   {/* Rotating Circular Text SVG */}
                   <svg
                     className="w-full h-full animate-[spin_20s_linear_infinite]"
@@ -175,7 +175,7 @@ export default function BrandStorySection() {
                     </text>
                   </svg>
                   {/* Center Official URVA Logo Emblem */}
-                  <div className="absolute w-7 h-7 sm:w-11 sm:h-11 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
+                  <div className="absolute w-7 h-7 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg border border-[#DF9F52]/50 bg-black/60">
                     <Image
                       src="/images/urva-official-circle.png"
                       alt="URVA Official Logo"

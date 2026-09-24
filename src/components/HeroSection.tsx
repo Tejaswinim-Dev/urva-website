@@ -6,9 +6,22 @@ import gsap from "gsap";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  // Guarantee seamless video autoplay on mobile iOS Safari / Android Chrome
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.playsInline = true;
+      videoRef.current.play().catch(() => {
+        // Autoplay may be deferred until first user touch by low power mode
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -39,26 +52,38 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative isolate min-h-screen min-h-[100dvh] w-full max-w-full flex flex-col justify-center sm:justify-between overflow-hidden bg-[#0A120D] text-[#FAF7F2] pt-20 sm:pt-36 lg:pt-44 pb-10 sm:pb-16"
+      className="relative isolate min-h-screen min-h-[100dvh] h-full w-full max-w-full flex flex-col justify-center sm:justify-between overflow-hidden bg-[#0A120D] text-[#FAF7F2] pt-20 sm:pt-36 lg:pt-44 pb-10 sm:pb-16"
     >
       {/* Full-Bleed Background Video — True Background Layer on All Screens */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+      <div className="absolute inset-0 w-full h-full min-h-full overflow-hidden pointer-events-none z-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          // @ts-expect-error webkit-playsinline attribute for iOS Safari
           webkit-playsinline="true"
+          controls={false}
+          disablePictureInPicture
           poster="/images/hero-landscape.jpg"
           preload="auto"
-          className="hero-bg-video scale-100"
+          className="hero-bg-video"
           style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "100%",
+            height: "100%",
+            minWidth: "100%",
+            minHeight: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
             filter: "brightness(1.08) contrast(1.06) saturate(1.18)",
           }}
         >
           <source src="/images/gemini_generated_video_3a74ae1b_gwr_video_mvp.mp4" type="video/mp4" />
-          <source src="/images/gemini_generated_video_3a74ae1b.mp4" type="video/mp4" />
+          <source src="/videos/urva-hero.mp4" type="video/mp4" />
         </video>
 
         {/* Minimal, Classic & Luminous Overlays (Keeps the video bright & vivid!) */}
@@ -69,7 +94,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/45 pointer-events-none" />
 
         {/* Soft bottom transition gradient into the next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-28 sm:h-48 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-48 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content — Centered with Generous Space below the Navbar */}
@@ -106,17 +131,17 @@ export default function HeroSection() {
         {/* Action CTAs — Curved Pills & Liquid Glass with Balanced Mobile Spacing */}
         <div
           ref={ctaRef}
-          className="mt-7 sm:mt-12 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
+          className="mt-6 sm:mt-12 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 w-full sm:w-auto px-4 sm:px-0 justify-center"
         >
           <a
             href="#carousel"
-            className="w-full sm:w-auto px-7 sm:px-10 py-3 sm:py-4 rounded-full bg-[#FAF7F2] text-[#0A120D] hover:bg-white text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.25em] font-semibold transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 cursor-pointer text-center"
+            className="w-full max-w-[260px] sm:w-auto sm:max-w-none px-6 sm:px-10 py-2.5 sm:py-4 rounded-full bg-[#FAF7F2] text-[#0A120D] hover:bg-white text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.25em] font-semibold transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 cursor-pointer text-center"
           >
             Explore Collection
           </a>
           <a
             href="#story"
-            className="w-full sm:w-auto px-7 sm:px-10 py-3 sm:py-4 rounded-full border border-white/40 text-white hover:bg-white/20 bg-white/10 backdrop-blur-xl text-[11px] sm:text-xs uppercase font-sans tracking-[0.18em] sm:tracking-[0.25em] font-medium transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 cursor-pointer text-center"
+            className="w-full max-w-[260px] sm:w-auto sm:max-w-none px-6 sm:px-10 py-2.5 sm:py-4 rounded-full border border-white/40 text-white hover:bg-white/20 bg-white/10 backdrop-blur-xl text-[11px] sm:text-xs uppercase font-sans tracking-[0.16em] sm:tracking-[0.25em] font-medium transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 cursor-pointer text-center"
           >
             Our Story
           </a>
