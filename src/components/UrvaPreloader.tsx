@@ -102,7 +102,7 @@ export default function UrvaPreloader() {
   return (
     <div
       ref={preloaderRef}
-      className="fixed inset-0 z-[9999] bg-[#0A120D] text-[#FAF7F2] flex flex-col items-center justify-center overflow-hidden select-none"
+      className="fixed inset-0 z-[9999] bg-[#0A120D] text-[#FAF7F2] flex flex-col items-center justify-center overflow-hidden select-none w-screen w-full h-[100dvh] max-h-[100dvh]"
       style={{
         transition: "opacity 0.6s ease-out",
       }}

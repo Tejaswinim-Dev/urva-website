@@ -132,7 +132,7 @@ export default function RuralCraftsmanshipSection() {
             {stories.map((story, idx) => (
               <div
                 key={story.id}
-                className="w-[320px] sm:w-[440px] lg:w-[500px] flex-shrink-0 snap-start liquid-glass rounded-3xl border border-white/80 p-6 sm:p-7 flex flex-col justify-between group hover:border-[#101F17]/40 transition-all duration-500 shadow-[0_16px_40px_rgba(16,31,23,0.06)] hover:shadow-[0_24px_50px_rgba(16,31,23,0.12)]"
+                className="w-[84vw] sm:w-[420px] lg:w-[480px] max-w-[500px] flex-shrink-0 snap-start liquid-glass rounded-3xl border border-white/80 p-5 sm:p-7 flex flex-col justify-between group hover:border-[#101F17]/40 transition-all duration-500 shadow-[0_16px_40px_rgba(16,31,23,0.06)] hover:shadow-[0_24px_50px_rgba(16,31,23,0.12)]"
               >
                 <div>
                   {/* Photo Frame */}

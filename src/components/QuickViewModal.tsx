@@ -91,7 +91,7 @@ export default function QuickViewModal() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 lg:p-8"
       data-lenis-prevent="true"
       data-lenis-prevent-wheel="true"
       data-lenis-prevent-touch="true"
@@ -111,7 +111,7 @@ export default function QuickViewModal() {
         data-lenis-prevent-wheel="true"
         data-lenis-prevent-touch="true"
         onWheel={(e) => e.stopPropagation()}
-        className="relative bg-[#FAF7F2]/95 backdrop-blur-2xl text-[#1C1E1B] max-w-4xl w-full border border-white/60 shadow-[0_30px_70px_rgba(0,0,0,0.35)] rounded-3xl overflow-hidden z-10 flex flex-col md:flex-row max-h-[92vh]"
+        className="relative bg-[#FAF7F2]/95 backdrop-blur-2xl text-[#1C1E1B] max-w-4xl w-full border border-white/60 shadow-[0_30px_70px_rgba(0,0,0,0.35)] rounded-3xl overflow-hidden z-10 flex flex-col md:flex-row max-h-[94dvh] sm:max-h-[90vh]"
       >
         {/* Close Button */}
         <button

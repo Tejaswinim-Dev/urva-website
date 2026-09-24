@@ -159,13 +159,13 @@ export default function CartDrawer() {
         onClick={handleClose}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10 h-full pointer-events-none">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10 h-full h-[100dvh] pointer-events-none">
         <div
           ref={drawerRef}
           data-lenis-prevent="true"
           data-lenis-prevent-wheel="true"
           data-lenis-prevent-touch="true"
-          className="w-screen max-w-md h-full max-h-screen liquid-glass rounded-l-3xl text-[#1C1E1B] shadow-2xl flex flex-col border-l border-white/80 overscroll-contain relative pointer-events-auto select-none sm:select-auto"
+          className="w-screen max-w-full sm:max-w-md h-full h-[100dvh] max-h-screen liquid-glass rounded-none sm:rounded-l-3xl text-[#1C1E1B] shadow-2xl flex flex-col border-l-0 sm:border-l border-white/80 overscroll-contain relative pointer-events-auto select-none sm:select-auto"
           onWheel={(e) => e.stopPropagation()}
         >
           {/* STEP 1: BASKET VIEW */}
